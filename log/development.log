@@ -19,3 +19,175 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+
+
+Started GET "/" for ::1 at 2017-04-03 20:59:27 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (7.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1178ms (Views: 1168.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2017-04-03 20:59:29 -0600
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2017-04-03 20:59:29 -0600
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2017-04-03 20:59:29 -0600
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2017-04-03 20:59:29 -0600
+
+
+Started GET "/assets/application-bc105cf26f847567b5eae624a793b626.js?body=1" for ::1 at 2017-04-03 20:59:29 -0600
+
+
+Started GET "/signup" for ::1 at 2017-04-03 20:59:32 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-04-03 20:59:56 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9RfFz0RJgdfwSRGaaUDKnowa1RAwQTbJGUHaJzHMjkiTn16N+BT0K75NACvx9/xv/r9JDRlJ9wf/7/hPJroRoQ==", "user"=>{"name"=>"ali", "email"=>"daisymt2540@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36mSQL (26.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ali"], ["email", "daisymt2540@gmail.com"], ["password_digest", "$2a$10$GHYbxI5MhJU8tBu9xMh3H.Wxty8P.0lLi6UaUqCL4BX9KPn/p3eg6"], ["created_at", "2017-04-04 02:59:57.093624"], ["updated_at", "2017-04-04 02:59:57.093624"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 44.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-03 20:59:57 -0600
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/notification" for ::1 at 2017-04-03 21:00:06 -0600
+
+ActionController::RoutingError (No route matches [POST] "/notification"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/aleneschlereth/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/aleneschlereth/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/aleneschlereth/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.0ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (83.4ms)
+
+
+Started POST "/notification" for ::1 at 2017-04-03 21:00:55 -0600
+
+ActionController::RoutingError (uninitialized constant ApplicaitonController):
+  app/controllers/notification_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (65.9ms)
+
+
+Started POST "/notification" for ::1 at 2017-04-03 21:01:19 -0600
+Processing by NotificationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aSaS9CY5+ymm5rSlobCdEhs8LURfID2AY5DhhO3jAbQPrgm2mmSO1ejipRQ5B6vjaZmxWXYo/E6FPsPs+pWeXQ==", "email"=>"thomschlereth@gmail.com", "commit"=>"Tell them"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+FriendNotifier#inform: processed outbound mail in 9.4ms
+Completed 500 Internal Server Error in 35ms
+
+NameError (undefined local variable or method `friend_contact' for #<FriendNotifier:0x007facfe752d00>
+Did you mean?  friend_contract):
+  app/mailers/friend_notifier.rb:4:in `inform'
+  app/controllers/notification_controller.rb:4:in `create'
+
+
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/aleneschlereth/.rvm/gems/ruby-2.3.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (58.8ms)
+
+
+Started POST "/notification" for ::1 at 2017-04-03 21:01:53 -0600
+Processing by NotificationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aSaS9CY5+ymm5rSlobCdEhs8LURfID2AY5DhhO3jAbQPrgm2mmSO1ejipRQ5B6vjaZmxWXYo/E6FPsPs+pWeXQ==", "email"=>"thomschlereth@gmail.com", "commit"=>"Tell them"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered friend_notifier/inform.html.erb within layouts/mailer (0.4ms)
+  Rendered friend_notifier/inform.text.erb within layouts/mailer (0.9ms)
+
+FriendNotifier#inform: processed outbound mail in 157.0ms
+
+Sent mail to thomschlereth@gmail.com (179.3ms)
+Date: Mon, 03 Apr 2017 21:01:53 -0600
+From: no-reply@youvechagned.io
+To: thomschlereth@gmail.com
+Message-ID: <58e30ca1efd82_119f63fd6803dce30506e1@Alenes-MacBook-Pro.local.mail>
+Subject: ali says you've changed.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e30ca1ee083_119f63fd6803dce305052f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e30ca1ee083_119f63fd6803dce305052f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Your "friend" Ali wanted to let you know that you've changed. Tell someone else that they've changed. It's your duty.
+
+
+----==_mimepart_58e30ca1ee083_119f63fd6803dce305052f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    Your "friend" Ali wanted to let you know that you've changed. Tell someone else that they've changed. It's your duty.
+
+  </body>
+</html>
+
+----==_mimepart_58e30ca1ee083_119f63fd6803dce305052f--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 357ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-03 21:01:54 -0600
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.4ms)

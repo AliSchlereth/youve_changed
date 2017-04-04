@@ -1,4 +1,4 @@
-class NotificationController < ApplicaitonController
+class NotificationController < ApplicationController
 
   def create
       FriendNotifier.inform(current_user, params[:email]).deliver_now
